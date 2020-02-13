@@ -1,0 +1,56 @@
+Quando ocorrer da console apresentar problemas de atutenticação entrar em <Security Realms>myrealm>providers> remover PetrobrasADAuthenticator.
+
+Remover o arquivo /ebusiness/shared/scripts/conf/providers.properties caso exista, se não, criar o arquivo com o conteúdo abaixo:
+
+##########################################################
+
+[PetrobrasADAuthenticator]
+AllGroupsFilter=objectCategory=group
+BindAnonymouslyOnReferrals=false
+CacheEnabled=true
+CacheSize=32
+CacheTTL=60
+ConnectTimeout=60
+ConnectionPoolSize=6
+ConnectionRetryLimit=3
+ControlFlag=SUFFICIENT
+Credential=eHd5prDg
+EnableGroupMembershipLookupHierarchyCaching=true
+EnableSIDtoGroupLookupCaching=false
+FollowReferrals=true
+GroupBaseDN=DC=biz
+GroupFromNameFilter=(&(cn=%g)(objectclass=group))
+GroupHierarchyCacheTTL=60
+GroupMembershipSearching=unlimited
+GroupSearchScope=subtree
+GuidAttribute=objectguid
+Host=rjldapgc.petrobras.biz spldapgc.petrobras.biz
+IgnoreDuplicateMembership=false
+KeepAliveEnabled=false
+MaxGroupHierarchiesInCache=100
+MaxGroupMembershipSearchLevel=0
+MaxSIDToGroupLookupsInCache=500
+ParallelConnectDelay=0
+Port=3268
+Principal=sajee@petrobras.biz
+PropagateCauseForLoginException=false
+ResultsTimeLimit=30000
+SSLEnabled=false
+StaticGroupDNsfromMemberDNFilter=(&(member=%M)(objectclass=group))
+StaticGroupNameAttribute=cn
+StaticGroupObjectClass=group
+StaticMemberDNAttribute=member
+UseRetrievedUserNameAsPrincipal=false
+UseTokenGroupsForGroupMembershipLookup=true
+UserBaseDN=DC=biz
+UserDynamicGroupDNAttribute=sAMAccountName
+UserFromNameFilter=(&(samAccountName=%u)(objectclass=user))
+UserNameAttribute=sAMAccountName
+UserObjectClass=user
+UserSearchScope=subtree
+
+##########################################################
+
+Salve o arquivo e após isso execute: /ebusiness/shared/scripts/configurarProvider.sh <nome do domínio> ad
+
+Reinicie o domínio.

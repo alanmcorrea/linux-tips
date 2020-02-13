@@ -1,0 +1,7 @@
+Oracle WebLogic Server
+
+    Go to Weblogic Domain path
+    Go to bin folder
+    Add following parameter in setDomainEnv.sh under JAVA_OPTS variable.
+
+-Dfile.encoding=utf8

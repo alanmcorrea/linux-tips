@@ -1,0 +1,37 @@
+
+1) oracleasm querydisk -p DSK0181
+
+	Verifica a saída /dev/mapper/: 
+
+	/dev/mapper/dsk_0181p1: LABEL="DSK0181" TYPE="oracleasm"
+
+2) multipath -ll | grep -i 0181
+
+	Verifica o wwid entre parênteses:
+
+	dsk_0181 (3600507630bffc1be0000000000000110) dm-78 IBM,2107900
+
+3) vi /etc/multipath.conf
+
+	Edita o arquivo /etc/multipath.conf incluindo a entrada Alias para o disco referente:
+
+	multipath {
+        	wwid 3600507630bffc1be0000000000000110
+        	alias dsk_0181
+    	}
+
+4) service oracleasm stop
+
+	Parar o Oracle ASM
+
+5) service multipathd restart
+
+	Reiniciar o Multipath
+
+6) service multipathd restart 
+
+	iniciar o Oracle ASM novamente
+
+7) oracleasm scandisks
+
+	Scanear os discos do ASM novamente para ver se encontra o faltante

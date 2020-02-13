@@ -1,0 +1,31 @@
+-----Procedimento na wiki com a lista de gateways para cada rede ----
+
+http://wiki.petrobras.com.br/pages/viewpage.action?pageId=37564767
+
+Necessário adicionar a rota na máquina alvo, para que a origem a reconheça na rede
+
+********* Adicionar novo Gateway **********
+#Exemplo com roda de serviço DMZ:
+
+-----Alterar Temporário ----
+
+ip route add 10.29.168.0/23 via 10.29.174.11
+
+-----Alterar Permanente ----
+
+/etc/sysconfig/network-scripts
+
+criar um arquivo route-eth0
+
+ex.: route-eno16780032
+
+adiconar a linha com a rota correspondente
+cada linha é uma rota:
+
+padrão: endereço-da-rede via ip-do-gateway
+
+exemplo: 10.29.168.0/23 via 10.29.174.11
+
+-----Reiniciar o Adaptador ----
+
+sudo service network restart

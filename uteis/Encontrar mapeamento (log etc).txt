@@ -1,0 +1,8 @@
+No servidor nó, encontrar onde fica a área de log e difitar o comando abaixo para encontrar o mapeamento:
+
+df - h caminho_da_area_de_log
+
+Em posse do mapeamento, acessar o servidor webdav e digitar o comando abaixo para encontrar o mapeamento lá:
+
+grep -RI caminho_mapeamento /etc/fstab
+

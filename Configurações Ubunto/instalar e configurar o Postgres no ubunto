@@ -1,0 +1,15 @@
+Instalação:
+# apt-get install postgresql pgadmin3
+
+Acessar o Postgres e alterar a senha:
+
+$ sudo -u postgres psql
+
+Em seguida, inserir a senha de root e em seguida o comando abaixo para a alteração de senha:
+
+# alter user postgres with encrypted password 'senha';
+
+Em seguida digitar o comando abaixo para sair:
+
+# \q
+

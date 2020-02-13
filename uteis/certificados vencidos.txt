@@ -1,0 +1,24 @@
+######## Gerar Request para novo Cert ###########
+
+cd /opt/aplicacoesab/MiddleWare/SCRIPTS/webunix-certificados/Solicitar/certificados.externo
+
+./generateCSR.External.sh
+
+######## Texto chamado ###############
+
+Solicito certificado de ssl para sistema.
+
+Sistema : XXXX.transpetro.com.br
+
+Evidência SIGMON em anexo.
+  
+Este certificado substituirá um ja vencido. O Apache será o repositório deste certificado. 
+Empregado responsável:  ALISSANDRA EVANGELISTA MARTINS CHAVE: UPNE
+Técnico que irá instalar o certificado: Alan Machado Correa - Chave: V8Z4
+Centro de Custo ST9MAT2B99
+
+Mesa: N2-CERTIFICADO_DIGITAL
+
+######## Atenção ######################
+
+Nota: O arquivo KEY não deve ser enviado no chamado, mas deve ser guardado para que possa ser instalado juntamente com o novo Certificado.

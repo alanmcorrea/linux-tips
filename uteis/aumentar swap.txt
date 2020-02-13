@@ -1,0 +1,25 @@
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/s1-swap-adding
+
+####### COMANDOS #################
+
+vgs
+
+swapoff -v /dev/mapper/system-swap
+
+lvm lvresize /dev/mapper/system-swap -L +1.5G
+
+mkswap /dev/mapper/system-swap
+
+swapon -va
+
+########### TABELA PADRAO #############
+
+Amount of system RAM	Recommended swap space		Recommended swap with hibernation
+
+less than 2 GB		2 times the amount of RAM	3 times the amount of RAM
+
+2 GB - 8 GB		Equal to the amount of RAM	2 times the amount of RAM
+
+8 GB - 64 GB		0.5 times the amount of RAM	1.5 times the amount of RAM
+
+more than 64 GB		workload dependent		hibernation not recommended

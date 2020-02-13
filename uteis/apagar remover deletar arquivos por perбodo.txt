@@ -1,0 +1,14 @@
+This is the best practice to remove old unused files from your server. For example, if we are running daily/hourly backup of files or database on the server then there will be much junk created on the server. So clean it regularly. To do it you can find older files from the backup directory and clean them. This article will help you to find files older than 30 days.
+1. Delete Files Older Than 30 Days
+
+This command will delete all files older than 30 days in system /opt/backup directory.
+
+find /opt/backup -type f -mtime +30 -exec rm -f {} \;
+
+2. Delete Files Older Than 30 Days with .log Extension
+
+If you want to delete only specified extension files, you can use the following command.
+
+find /var/log -name "*.log" -type f -mtime +30 -exec rm -f {} \;
+
+Above command will delete only files having .log extension.

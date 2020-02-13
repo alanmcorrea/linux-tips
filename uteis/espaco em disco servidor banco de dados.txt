@@ -1,0 +1,3 @@
+/u01/app/oracle/diag/rdbms/hepbr/rchepbrb/trace
+
+/u01/app/oracle/diag/rdbms/hepbr/rchepbrb/cdump

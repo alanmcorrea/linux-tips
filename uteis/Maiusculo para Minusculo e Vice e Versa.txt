@@ -1,0 +1,66 @@
+Converter maiúsculos em minúsculos e vice-versa com shell
+
+
+Segue abaixo algumas dicas para usar quando necessitamos converter letras maiúsculas em minúsculas, e vice-versa, com shell.
+
+Frase usada nos exemplos:
+
+FRASE='PENA QUE NO MUNDO EXISTAM MAIS DESISTENTES DO QUE FRACASSADOS'
+
+Bom, quando pensamos em converter um sequência de caracteres de maiúsculas em minúsculas e vice-versa, logo pensamos no comando tr, que poderia ser facilmente usado para esse fim, como no exemplo abaixo:
+
+echo "$FRASE" | tr 'A-Z' 'a-z'
+Resultado: pena que no mundo existam mais desistentes do que fracassados
+
+Com o comando tr, acima, trocamos todas as ocorrências de caracteres de 'A' a 'Z' maiúsculo (caixa-alta) pelos seus respectivos correspondentes em minúsculo (caixa-baixa).
+
+Agora apresento uma forma que aprendi recentemente, que traz o mesmo efeito, mas não usa o comando tr, ele usa sequências especiais dentro de "variáveis protegidas", ou seja, que estão envolvidas pelos colchetes "{}".
+
+Vejamos.
+
+Deixando os caracteres em minúsculo
+Deixando todos os caracteres minúsculos:
+
+echo ${FRASE,,}
+Resultado: pena que no mundo existam mais desistentes do que fracassados
+
+Deixando apenas o(s) caractere(s) definido(s) em minúsculo:
+
+echo ${FRASE,,A}
+Resultado: PENa QUE NO MUNDO EXISTaM MaIS DESISTENTES DO QUE FRaCaSSaDOS
+
+echo ${FRASE,,[AS]}
+Resultado: PENa QUE NO MUNDO EXIsTaM MaIs DEsIsTENTEs DO QUE FRaCassaDOs
+
+Definindo uma faixa de valores:
+
+echo ${FRASE,,[A-E]}
+Resultado: PeNa QUe NO MUNdO eXISTaM MaIS deSISTeNTeS dO QUe FRacaSSadOS
+
+Também é possível negar a o valor ou a faixa definida:
+
+echo ${FRASE,,[!A-E]}
+Resultado: pEnA quE no munDo ExistAm mAis DEsistEntEs Do quE frACAssADos
+
+Deixando os caracteres em maiúsculo
+Ok, para facilitar e agilizarmos, basta dizer que para transformar os caracteres em maiúsculo da forma demonstrada, basta trocar as virgulas ',,' por dois circunflexos '^^', exemplo:
+
+Deixando todos os caracteres maiúsculo:
+
+FRASE='pena que no mundo existam mais desistentes do que fracassados'
+$ echo ${FRASE^^}
+Resultado: PENA QUE NO MUNDO EXISTAM MAIS DESISTENTES DO QUE FRACASSADOS
+
+Deixando apenas o(s) caractere(s) definido(s) em maiúsculo:
+
+echo ${FRASE^^e}
+Resultado: pEna quE no mundo Existam mais dEsistEntEs do quE fracassados
+
+Negando o valor ou a faixa definida:
+
+echo ${FRASE^^[!e]}
+Resultado: PeNA QUe NO MUNDO eXISTAM MAIS DeSISTeNTeS DO QUe FRACASSADOS
+
+Os demais exemplo seguem a mesma lógica já mostrada.
+
+É isso ai, espero que seja útil para vocês algum dia, para mim já me ajudou em validação de formulários, ajuste de dados antes de gravar na base de dados e até mesmo na moderação, em alguns tópicos em que sem querer ou querendo o membro escreve tudo em maiúsculo (o que na netiqueta significa que você está gritando). 

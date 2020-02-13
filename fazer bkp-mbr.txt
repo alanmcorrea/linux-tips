@@ -1,0 +1,8 @@
+
+fazer backup
+
+dd if=/dev/sda of=copia.mbr bs=1 count=512
+
+restarurar backpup
+
+dd if=copia.mbr of=/dev/sda1

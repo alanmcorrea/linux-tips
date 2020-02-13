@@ -1,0 +1,15 @@
+,false
+org.eclipse.equinox.p2.touchpoint.natives,1.0.101.R35x_v20090806,plugins/org.eclipse.equinox.p2.touchpoint.natives_1.0.101.R35x_v20090806.jar,4,false
+org.eclipse.equinox.p2.ui,1.0.101.R35x_v20090819,plugins/org.eclipse.equinox.p2.ui_1.0.101.R35x_v20090819.jar,4,false
+org.eclipse.equinox.p2.ui.sdk,1.0.100.v20090520-1905,plugins/org.eclipse.equinox.p2.ui.sdk_1.0.100.v20090520-1905.jar,4,false
+org.eclipse.equinox.p2.ui.sdk.scheduler,1.0.0.v20090520-1905,plugins/org.eclipse.equinox.p2.ui.sdk.scheduler_1.0.0.v20090520-1905.jar,4,false
+org.eclipse.equinox.p2.updatechecker,1.1.0.v20090520-1905,plugins/org.eclipse.equinox.p2.updatechecker_1.1.0.v20090520-1905.jar,4,false
+org.eclipse.equinox.p2.updatesite,1.0.101.R35x_20100105,plugins/org.eclipse.equinox.p2.updatesite_1.0.101.R35x_20100105.jar,4,false
+org.eclipse.equinox.preferences,3.2.301.R35x_v20091117,plugins/org.eclipse.equinox.preferences_3.2.301.R35x_v20091117.jar,4,false
+org.eclipse.equinox.registry,3.4.100.v20090520-1800,plugins/org.eclipse.equinox.registry_3.4.100.v20090520-1800.jar,4,false
+org.eclipse.equinox.security,1.0.100.v20090520-1800,plugins/org.eclipse.equinox.security_1.0.100.v20090520-1800.jar,4,false
+org.eclipse.equinox.security.ui,1.0.100.v20090520-1800,plugins/org.eclipse.equinox.security.ui_1.0.100.v20090520-1800.jar,4,false
+org.eclipse.equinox.security.win32.x86,1.0.100.v20090520-1800,plugins/org.eclipse.equinox.security.win32.x86_1.0.100.v20090520-1800.jar,4,false
+org.eclipse.equinox.simpleconfigurator,1.0.101.R35x_v20090807-1100,plugins/org.eclipse.equinox.simpleconfigurator_1.0.101.R35x_v20090807-1100.jar,1,true
+org.eclipse.equinox.simpleconfigurator.manipulator,1.0.101.R35x_v20100209,plugins/org.eclipse.equinox.simpleconfigurator.manipulator_1.0.101.R35x_v20100209.jar,4,false
+org.eclipse.equi

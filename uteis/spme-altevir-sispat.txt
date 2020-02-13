@@ -1,0 +1,4 @@
+Console: http://webj-aplb.petrobras.com.br/console
+
+Iniciar Console e NM: /ebusiness/shared/scripts/comandarAdmin.sh -i / /ebusiness/shared/scripts/comandarNodeManager.sh -i
+

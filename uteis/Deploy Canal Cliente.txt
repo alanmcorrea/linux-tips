@@ -1,0 +1,45 @@
+Console:
+
+realizar tunel para nicacio:10000
+
+Estáticos: 
+
+1 - logar no servidor atselum
+$ssh atselum
+
+2 - Entrar na pasta dos estáticos:
+$cd /ebusiness/globalsite/home/PrdInt_Apachev2_CanalCliente/appdocroot/CACL_gerencia/
+
+3 - Fazer o backup da pasta ccgn:
+$tar -cvf ccgn07082019.tar.gz ccgn
+
+4 - Copiar o arquivo zip para pasta dos estáticos
+$cp /tmp/CCGNWeb-estatico.zip .
+
+5 - Descompactar o arquivo zip em: /ebusiness/globalsite/home/PrdInt_Apachev2_CanalCliente/appdocroot/CACL_gerencia/
+$unzip CCGNWeb-estatico.zip
+
+6 - logar no servidor fortissio
+$ssh fortissio
+
+7 - Entrar na pasta dos estáticos:
+$cd /ebusiness/globalsite/home/PrdExt_Apachev2_CanalCliente/appdocroot/cacl_www
+
+8 - Fazer o backup da pasta ccgn:
+$tar -cvf ccgn07082019.tar.gz ccgn
+
+9 - Copiar o arquivo zip para pasta dos estáticos
+$cp /tmp/CCGNWeb-estatico.zip .
+
+10 - Descompactar o arquivo zip em: /ebusiness/globalsite/home/PrdExt_Apachev2_CanalCliente/appdocroot/cacl_www
+$unzip CCGNWeb-estatico.zip 
+
+11 - Restart dos apaches:
+
+Atselum: /ebusiness/globalsite/servers/PrdInt_Apachev2_CanalCliente/bin/checkHttpConfig.sh
+	 sudo /ebusiness/globalsite/servers/PrdInt_Apachev2_CanalCliente/restart_graceful
+	 sudo /ebusiness/globalsite/servers/PrdInt_Apachev2_CanalCliente/restart_status
+
+Fortissio: /ebusiness/globalsite/servers/PrdExt_Apachev2_CanalCliente/bin/checkHttpConfig.sh
+	   sudo /ebusiness/globalsite/servers/PrdExt_Apachev2_CanalCliente/restart_graceful
+	   sudo /ebusiness/globalsite/servers/PrdExt_Apachev2_CanalCliente/restart_status

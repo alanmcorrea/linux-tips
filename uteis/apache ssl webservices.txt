@@ -1,0 +1,13 @@
+Favor observar comentário que consta no arquivo de configuração do Apache da livonia e genovia. Detacado abaixo:
+
+-----------------
+### ATENCAO ###
+### As primeiras aplicacoes da lista costumam oferecer web-service por https, entao o certificado delas
+### devera sempre ser do tipo wildcard, ex: *.petrobras.com.br ou *.ep.petrobras.com.br, pois o java6 nao suporta TLS/SNI
+-----------------
+
+Assim, o lope, como possui certificado específico, não deve ser colocado em primeiro lugar.
+
+Para resolver o problema apresentado, eu (Adonai) alterei pontualmente o arquivo e coloquei em primeiro lugar o portal_spt.
+
+Favor avaliar demais arquivos de configuração e ordens alteradas recentemente.

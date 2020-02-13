@@ -1,0 +1,20 @@
+################ Symptom ##################
+
+Errors similar to the ones below are found in the database log files:
+
+    "could not create socket: Too many open files"
+    "could not create temporary file base/19781/pgsql_tmp/workfile_set_HashJoin_Slice-1.XXXXDtKNoF/spillfile_f341:Too many open files"
+    Errors in GPDB utility logs containing "Too many open files"
+
+################ Cause ####################
+
+"Too many open files" errors happen when a process needs to open more files than it is allowed by the operating system. This number is controlled by the maximum number of file descriptors the process has.
+
+
+The number of file descriptors for the current process can be shown with the following commands:
+
+[root@mdw ~]# ulimit -a | grep open
+open files (-n) 524288
+
+[root@mdw ~]# ulimit -n 524288
+[root@mdw ~]#

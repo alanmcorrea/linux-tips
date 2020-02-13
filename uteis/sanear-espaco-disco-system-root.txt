@@ -1,0 +1,6 @@
+ver a saída do 'df -h'
+
+executar o comando abaixo com os excludes das partições que estão montadas em outros storages:
+
+ex.:
+du -sch * --exclude=home --exclude=opt --exclude=u01 --exclude=oracle_backup --exclude=tmp --exclude=run --exclude=sys --exclude=usr --exclude=dev

@@ -1,0 +1,10 @@
+criar um arquivo com o conteúdo abaixo em /etc/network/interfaces.d/ ou adicionar em /etc/network/interfaces
+
+allow-hotplug eth0
+iface eth0 inet static
+        address 192.168.0.4
+        netmask 255.255.255.0
+        network 192.168.0.0
+        broadcast 192.168.0.255
+        gateway 192.168.0.1                
+        dns-nameservers 8.8.8.8 8.8.4.4    # Servidores de DNS

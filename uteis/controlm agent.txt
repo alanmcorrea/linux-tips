@@ -1,0 +1,13 @@
+sudo su - sactmag
+ 
+sudo /home/sactmag/ctm/scripts/start-ag
+
+---------------------------------------------------------------------------------------------------
+
+sh /home/ctmuser/ControlM/ctm/scripts/rc.agent_user
+
+When the Linux/Unix system is rebooted , Control-M agent is not restarted automatically.
+
+rc.agent_user script is used to start the agent in root mode. So you can ask your Unix/Linux administrator to run "sh /home/ctmuser/ControlM/ctm/scripts/rc.agent_user" whenever system comes up after rebooting. They usually put this script in the init.d directory i guess so this is run when server reboots and it can bring back the Control-M agent automatically on system reboot.
+
+If you want to run Control-M agent in non-root mode then you need to modify this script accordingly. The process is mentioned in Control-M agent installation guide. Please refer to that.

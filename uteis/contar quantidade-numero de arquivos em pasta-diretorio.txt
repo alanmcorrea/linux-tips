@@ -1,0 +1,13 @@
+ls directory | wc -l
+
+ls -1 | wc -l
+
+Which means: ls: list files in dir
+
+-1: (that's a ONE) only one entry per line. Change it to -1a if you want hidden files too
+
+| : pipe output onto...
+
+wc: "wordcount"
+
+-l: count lines.

@@ -1,0 +1,5 @@
+necessário ter em memória ram a swap q deseja liberar
+
+swapoff -a
+
+swapon -a

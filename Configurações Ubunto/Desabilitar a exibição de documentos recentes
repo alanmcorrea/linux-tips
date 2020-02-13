@@ -1,0 +1,21 @@
+ 	
+Re: Remover > Documentos Recentes (Como?)
+	
+Explicando:
+Remove o arquivo que lista o arquivos recentes
+Código:
+
+rm ~/.recently-used.xbel
+
+Cria ele de novo "limpo"
+Código:
+
+touch ~/.recently-used.xbel
+
+Muda o atributo do arquivo para imutável ('+i')
+Código:
+
+sudo chattr +i ~/.recently-used.xbel
+
+
+Se você apagar o arquivo e criar de novo (os dois primeiros passos), ou remover o atributo de imutável (sudo chattr -i ~/.recently-used.xbel). Tudo deve voltar ao normal.

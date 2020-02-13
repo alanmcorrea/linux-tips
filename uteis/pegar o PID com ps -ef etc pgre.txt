@@ -1,0 +1,15 @@
+
+
+You can use pgrep as long as you include the -f options. That makes pgrep match keywords in the whole command (including arguments) instead of just the process name.
+
+pgrep -f keyword
+
+From the man page:
+
+    -f       The pattern is normally only matched against the process name. When -f is set, the full command line is used.
+
+If you really want to avoid pgrep, try:
+
+ps -ef | awk '/[k]eyword/{print $2}'
+
+Note the [] around the first letter of the keyword. That's a useful trick to avoid matching the awk command itself.

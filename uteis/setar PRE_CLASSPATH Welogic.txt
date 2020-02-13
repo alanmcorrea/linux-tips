@@ -1,0 +1,3 @@
+Antes da declaração do DOMAIN_HOME no startWebLogic.sh adicionar a seguinte linha:
+
+PRE_CLASSPATH="/ebusiness/shared/home/SEU_DOMINIO/libs" ou o caminho do PRE_CLASSPATH desejado

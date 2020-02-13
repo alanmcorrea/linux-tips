@@ -1,0 +1,5 @@
+No caso de NFS ser EMC chamamos de .ckpt
+
+diretório '.ckpt', caso não exista o 'snapshot' 
+
+contato Y1BK - Miguel

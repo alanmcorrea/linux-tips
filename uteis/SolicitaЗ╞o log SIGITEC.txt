@@ -1,0 +1,12 @@
+Boa tarde.
+
+Em relação ao INC000037786717, foi identificado que existe a disponibilização dos logs da aplicação através do webdav abaixo:
+
+https://webdav.petrobras.com.br/tomcat_SIGITEC_HOM2-Serverlog/ 
+
+O acesso foi disponnibilizado para a chave B85P(Solicitante) e B207(RT da Aplicação).
+
+o arquivo 'prompt.log' está nesta mensagem em anexo, pois fica em um local diferente do restante.
+
+Att,
+Equipe INFRA-AB.

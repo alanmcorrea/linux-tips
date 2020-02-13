@@ -1,0 +1,5 @@
+sysctl -w vm.drop_caches=3
+
+sudo sync && sudo sysctl -w vm.drop_caches=3 && sudo sysctl -w vm.drop_caches=0
+
+echo 3 > /proc/sys/vm/drop_caches

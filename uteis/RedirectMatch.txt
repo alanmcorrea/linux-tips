@@ -1,0 +1,3 @@
+RedirectMatch ^/api/(.*)$ http://lago.petrobras.com.br/lago/api/$1
+
+Todas as requisições que vierem de http://lago.petrobras.com.br/api/* serão enviadas para http://lago.petrobras.com.br/lago/api/RESTANTE_DO_CAMINHO

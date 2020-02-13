@@ -1,0 +1,17 @@
+Serviço PI telemetria:
+
+radamante[webadmin] /ebusiness/globalsite/servers/BdemqPIServer/bin/stopPI.sh
+radamante[webadmin] /ebusiness/globalsite/servers/BdemqPIServer/bin/startPI.sh
+
+
+Testes de telemetria:
+
+http://radamante-c:10510/util/telemetria/exibir_dados_telemetria.jsp 
+
+Confere a versão:
+
+https://bdemqterceiros.petrobras.com.br/versao.jsp
+http://bdemqsede.ab.petrobras.biz/menu/versao.jsp
+http://bdemqsede.ab.petrobras.biz/alfandegados/versao.jsp
+https://bdemqsede.ab.petrobras.biz/versao.jsp
+http://bdemqsede.ab.petrobras.biz/gasnat/versao.jsp 

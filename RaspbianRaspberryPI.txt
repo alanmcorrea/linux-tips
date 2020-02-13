@@ -1,0 +1,206 @@
+
+Overall guide: 
+
+My guide below:
+
+#####  Time to resize your disk  ###################
+
+== Raspbian ==
+
+sudo raspi-config
+
+Advanced Options > Expand Filesystem
+
+#####  Change the hostname  ###################
+
+sudo raspi-config
+
+Network Options > Hostname
+
+sudo vi /etc/hosts 
+
+#####  Add new user  ############################
+
+adduser alan
+
+passwd alan (change password)
+
+#sudo usermod -aG wheel alan (add into the wheel group, that by default is allowed to have sudo grants)
+
+##### configure wireless #######################
+
+sudo raspi-config
+
+Network Options > Wi-fi
+
+##### Time & Date #######################
+
+sudo raspi-config
+
+Localisation Options > Change Timezone
+
+OU
+
+timedatectl list-timezones | grep -i paulo
+result: America/Sao_Paulo
+
+timedatectl set-timezone America/Sao_Paulo
+
+timedatectl
+
+##### IP Fixo #######################
+
+vi /etc/dhcpcd.conf
+
+sudo /etc/init.d/networking restart
+
+ou
+
+sudo systemctl restart networking
+
+##### Add disks ######################
+
+In case of NTFS file System, install ntfs-3g:
+
+sudo apt install ntfs-3g
+
+then reboot
+
+sudo fdisk -l
+
+sudo blkid
+
+mkdir /media/storage120 
+
+-o rw,users,umask=000 /media/storage120
+
+mount /dev/sda -o rw /media/storage120
+
+ou
+
+mount UUID="0BF943E61AAF8599" -o rw /media/storage120
+
+sudo vi /etc/fstab:
+
+UUID="0BF943E61AAF8599" /media/storage120 ntfs defaults,nofail 2 0
+
+df -h
+
+##### Docker ######################
+
+curl -fsSL https://get.docker.com/ | sh
+
+List All Containers:
+
+	sudo docker ps -a
+
+List Active Containers:
+
+	sudo docker ps
+
+List All Images:
+
+	sudo docker images -a
+
+Remove Images:
+
+	docker rmi ID_IMAGE
+
+Reove Container:
+
+	docker rm ID_CONTAINER
+
+# How to start and stop the container 
+
+docker stop <containername/id>  # to stop the container which is running in background mode
+docker container start <containername/id> # to start the already stopped container
+
+# monitoring the Container 
+
+docker container list # list the containers created
+docker container ls -a  #to list the containers including not running containers
+docker ps    #to list the running container
+docker info #docker engine status including container running/paused/stopped containers list
+docker container stats <containername/id> #prints the CPU and MEM usage data of the container name
+docker container stats #prints the CPU and MEM usage of all running containers
+docker container top <containername/id> #executes the top command in the container specified, fails if the specified container is not running
+
+# How to remove/delete the container
+
+docker container rm <containername/id> # Remove the Container 
+
+# How to remove/delete the image
+
+docker container rmi <imagename/imageid> # Remove the image
+# How to view the logs of the running container
+
+docker container logs <containername/id> # to view the logs of the container
+
+##### Container Ubunto ################
+
+docker run -d --user $UID:$GID -p 8080:8080 -p 6881:6881/tcp -p 6881:6881/udp -v /media/storage120/qbittorrent:/qbittorrent ubuntu
+
+##### Container linuxserver/qbittorrent ################
+
+https://hub.docker.com/r/linuxserver/qbittorrent/
+
+sudo docker create --name=qbittorrent-e PUID=1001-e PGID=1001-e TZ=America/Sao_Paulo-e UMASK_SET=022-e WEBUI_PORT=8080-p 6881:6881-p 6881:6881/udp-p 8080:8080-v /media/westeros/qbittorrent/config:/config-v /media/westeros/qbittorrent/downloads:/downloads--restart unless-stoppedlinuxserver/qbittorrent
+
+sudo docker start qbittorrent
+
+##### Container media-nas:1.0 ################
+
+-----------dockerfile------------------------------------------------------------------------------------------------------
+
+FROM debian
+
+MAINTAINER Alan alancorrea.ti@gmail.com
+LABEL Description="Media and NAS server"
+
+RUN apt-get update && apt-get install -y vim && apt-get install -y samba && apt-get install -y minidlna && apt-get clean
+EXPOSE 137 138 139 445 8200
+VOLUME /share
+WORKDIR /share
+
+-----------dockerfile------------------------------------------------------------------------------------------------------
+
+docker run --name=media-nas -ti -e UMASK_SET=022 -p 137:137 -p 138:138 -p 139:139 -p 445:445 -p 8200:8200 -v /media/storage120:/share --restart unless-stopped media-nas:1.0
+
+docker run -d --net=host --name=media-dlna -ti -e UMASK_SET=022 -p 8200:8200 -v /media/westeros:/media --restart unless-stopped media-dlna:1.0
+
+vi /etc/samba/smb.conf
+
+[ShareNAS] 
+comment = MediaNasServer
+public = yes
+writeable = yes
+browsable = yes 
+path = /share
+create mask = 0777
+directory mask = 0777
+
+service smbd restart
+
+
+vi /etc/minidlna.conf
+
+media_dir=/share
+
+service minidlna start
+
+##### Container postgres ################
+
+docker run --name postgres -ti -p 5433:5432 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=nimda -d -v /docker-volumes/postgres/data:/var/lib/postgresql/data --restart unless-stopped postgres 
+
+##### Container Tomcat ################
+
+run --name=tomcat -ti -e UMASK_SET=022 -p 8181:8181 -v /docker-volumes/tomcat/apache-tomcat-8.5.50:/tomcat -v /docker-volumes/tomcat/jdk1.8.0_231:/java -e JAVA_HOME=/java --restart unless-stopped tomcat-server:1.0
+
+
+
+
+
+
+
+
+

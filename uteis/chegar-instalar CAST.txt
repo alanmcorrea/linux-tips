@@ -1,0 +1,11 @@
+
+yum install Cast.Discovery
+
+yum remove Cast.Discovery
+
+service Cast.Discovery start 
+
+Baixar o registro caso não possua: curl -O http://control.petrobras.biz/registro/registro.sh
+Registrar: bash registro.sh -a
+
+service Cast.Discovery status

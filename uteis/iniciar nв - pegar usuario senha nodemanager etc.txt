@@ -1,0 +1,5 @@
+comandarDominio.sh -h (Para ver as opções)
+
+comandarDominio.sh -m comandar apensa o managed server
+
+mas sobre sua pergunta inicial, a informação pode ser obtida no config.xml utilizando o script decriptarString.sh, porém não vejo sentido nisso para o problema descrito

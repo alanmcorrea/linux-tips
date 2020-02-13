@@ -1,0 +1,13 @@
+Ver espaço em disco livre: VGS (root)
+
+Novo Tamanho: lvextend -L +1G /dev/mapper/system-var
+
+Aplicar modificação: 
+
+xfs_growfs /dev/mapper/system-var
+
+ou
+
+resize2fs /dev/mapper/vg_africa-lv_orabin
+
+Depende do File System

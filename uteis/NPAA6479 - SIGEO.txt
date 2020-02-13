@@ -1,0 +1,12 @@
+Arquivo /etc/auto.master
+
+deve conter:
+
+/u yp:auto.home rw,rsize=8192,wsize=8192,nfsvers=3,proto=tcp,hard,intr
+/SIGEO_DATA yp:auto_dirsigeo rw,rsize=8192,wsize=8192,nfsvers=3,proto=tcp,hard,intr
+/- file:/etc/auto.direct --timeout=3600
+/- yp:auto_gvtproj --timeout=3600
+
+Em caso de auteração no arquivo, reiniciar o autonfs:
+
+service autofs restart

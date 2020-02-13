@@ -1,0 +1,17 @@
+cd /ebusiness/shared/servers/TstInt308_WLSv103/webadmin/bin
+
+cd /ebusiness/shared/scripts
+
+./startAdm.sh
+
+startAdm.sh
+comandarAdm.sh
+LigaAdmin.sh
+
+startNM.sh
+comandarNodeManager.sh
+LigaNodeManager.sh
+
+startNodeManager.sh
+
+nohup ./startNodeManager.sh >> startWebLogic.out 2>&1 &

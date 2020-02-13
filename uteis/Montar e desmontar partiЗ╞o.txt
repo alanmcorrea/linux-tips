@@ -1,0 +1,7 @@
+mount -a  = monta todas as partições
+
+umount -a  = monta todas as partições
+
+mount /particao = monta partição específica
+
+umount /particao = desmonta partição específica

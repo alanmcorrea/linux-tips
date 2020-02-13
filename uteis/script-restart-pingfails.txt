@@ -1,0 +1,19 @@
+#!/bin/bash
+
+target="google.com"
+
+count=$( ping -c 1 $target | grep icmp* | wc -l )
+
+if [ $count -eq 0 ]
+
+then
+
+date >> /home/user/pingfail.txt
+
+/sbin/shutdown -r now
+
+else
+
+date >> /home/user/pingsuccess.txt
+
+fi

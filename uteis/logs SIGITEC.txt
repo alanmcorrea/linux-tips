@@ -1,0 +1,4 @@
+
+/tomcat6/tomcat_SIGITEC_HOM2/logs/catalina.out
+
+/tomcat6/tomcat_SIGITEC_HOM2/data/logs/prompt.log

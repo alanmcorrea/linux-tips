@@ -1,0 +1,3 @@
+In httpd.conf add (or change if it's already there):
+
+AddDefaultCharset utf-8

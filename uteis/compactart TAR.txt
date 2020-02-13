@@ -1,0 +1,14 @@
+Compactar:
+
+tar -czvf archive.tar.gz /home/ubuntu/Downloads
+
+
+tar -czvf archive.tar.gz /home/ubuntu/Downloads /usr/local/stuff /home/ubuntu/Documents/notes.txt
+
+
+Extrair:
+
+tar -xzvf archive.tar.gz
+
+tar -xzvf archive.tar.gz -C /tmp
+

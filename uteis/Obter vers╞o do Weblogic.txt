@@ -1,0 +1,11 @@
+Verificar o caminho de $WL_HOME:
+
+	dentro de Dominio/bin executar o comando 'cat setDomainEnv.sh | grep WL_HOME='
+
+Dentro de Caminho_do_WL_HOME/server/lib, executar o comando:
+
+	java -cp weblogic.jar weblogic.version
+
+Ou executar diretamente o comando:
+
+	java -cp Caminho_do_WL_HOME/server/lib/weblogic.jar weblogic.version

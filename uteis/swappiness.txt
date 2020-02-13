@@ -1,0 +1,10 @@
+/proc/sys/vm/swappiness
+
+Default value = 60
+
+temporarily
+echo 10 > /proc/sys/vm/swappiness
+
+Persistently
+vm.swappiness=10
+

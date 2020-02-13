@@ -1,0 +1,28 @@
+Summary
+
+As shown we can reset the root password in Linux CentOS/RHEL 7 by booting with the ‘rd.break’ option, remounting the file system with read/write privileges, creating a chroot jail, executing the passwd command and then finally fixing up SELinux contexts.
+
+After exiting the chroot and the initramfs root shell prompt the file system will be relabelled which may take a few minutes or more depending on the number of files you have. When your system has booted back up you’ll be able to use the new root password.
+
+Details:
+
+The process has changed from CentOS/RHEL (Red Hat Enterprise Linux) version 6 to 7, as previously you would boot into single user mode and then change the password as root. From version 7 the equivalent modes are the rescue or emergency targets, however these require the root password before you can do anything which doesn’t help us here, so we’ll take you through the new process to change the lost root password.
+
+######## todo sequence #############
+
+1) Start it up. At the boot menu, press the ‘e’ key to edit the first boot entry;
+
+2) From the grub options, find the line that starts with “linux16” and go to the end of it. Enter ‘rd.break’ without quotes at the end of this line;
+
+3) Press “Ctrl+x” to boot with these options. This will boot to the initramfs prompt with a root shell;
+
+4) At this stage, the root file system is mounted in read only mode to /sysroot and must be remounted with read/write (rw) permissions in order for us to actually make any changes. This is done with the ‘mount -o remount,rw /sysroot’ command;
+
+5) Once the file system has been remounted, change into a chroot jail so that /sysroot is used as the root of the file system. This is required so that any further commands we run will be in regards to /sysroot. This is done by running ‘chroot /sysroot’;
+
+6) From here the root password can be reset with the ‘passwd’ command;
+
+7) If you’re not using SELinux, you could reboot at this point and everything would be fine, however by default CentOS/RHEL 7 use SELinux in enforcing mode, so we need to fix the context of the /etc/shadow file. This is because when the ‘passwd’ command is run, it creates a new /etc/shadow file. As SELinux is not running in this mode the file is created with no SELinux contexts, which can cause problems when we reboot. Create the /.autorelabel command using ‘touch’;
+
+8) Enter the ‘exit’ command twice, the first one will exit the chroot jail environment while the second will exit the initramfs root shell and reboot the system.
+

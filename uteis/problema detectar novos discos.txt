@@ -1,0 +1,12 @@
+Dica S.O.: 
+As vezes a equipe de storage adiciona discos À nosso pedido mas não aparece automaticamente no Server.... 
+nesses casos é preciso dar um rescan 
+use o comando: 
+echo "- - -" > /sys/class/scsi_host/host0/scan 
+depois 
+echo "- - -" > /sys/class/scsi_host/host1/scan
+
+ou  
+
+echo "- - -" > /sys/class/scsi_host/host3/scan 
+e assim sucessivamente 

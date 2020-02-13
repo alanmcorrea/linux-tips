@@ -1,0 +1,7 @@
+<Esc> G (Maiúsculo)
+
+ou 
+
+<Esc> GA (Maiúsculo)
+
+para já ir para o modo de edição

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+echo "Informe sua chave:"
+read CHAVE
+
+echo "Informe o nome do arquivo xml para XOG:"
+read ARQUIVO_XML
+
+if ! scp as$CHAVE@npaa1243:/home/AS${CHAVE^^}/$ARQUIVO_XML /tmp/
+then
+    echo "Erro na cópia do arquivo."
+    exit 1
+fi
+
+echo "Mensagem: $1"
+
+copiar antes os xml para /tmp
+
+sudo su - webadmin 
+
+export VER=gdpt/"HOMOLOGACAO_23_05_2019" 
+
+cd xog
+
+mkdir $VER
+
+cp /tmp/OBJECT_LOOKUP_PETR_CLASS_RSV_SAIDA_PARA_HMG.xml $VER
+
+find $VER -type f -name 'OBJECT_LOOKUP_PETR_CLASS_RSV_SAIDA_PARA_HMG.xml' > $VER/seq1.txt 
+
+./run_xog.sh $VER/seq1.txt

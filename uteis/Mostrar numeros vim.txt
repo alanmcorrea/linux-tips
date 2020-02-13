@@ -1,0 +1,4 @@
+Esc
+
+:set number
+:set nonumber

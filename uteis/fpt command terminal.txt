@@ -1,0 +1,15 @@
+https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
+
+ftp domain.com
+
+Name: anonymous
+Password:
+
+ftp> ls
+ftp> cd directory
+
+*** Before downloading a file, we should set the local FTP file download directory by using 'lcd' command:
+
+lcd /home/user/yourdirectoryname
+
+get file

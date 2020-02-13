@@ -1,0 +1,27 @@
+copiar antes os xml para /tmp
+
+sudo su - webadmin 
+
+export VER=gdpt/"HOMOLOGACAO_20_08_2019_1" 
+
+export VER=z5mg/"HOMOLOGACAO_07_08_2019"
+
+cd xog
+
+mkdir $VER
+
+cp /tmp/OBJECT_LOOKUP_PETR_CLASS_RSV_SAIDA_PARA_HMG.xml $VER
+
+find $VER -type f -name 'OBJECT_LOOKUP_PETR_CLASS_RSV_SAIDA_PARA_HMG.xml' > $VER/seq1.txt 
+
+./run_xog.sh $VER/seq1.txt
+
+--------------------------
+
+mkdir $VER/tmp
+
+find $VER -type f -name *.xml > $VER/seq1.txt 
+
+scp asv8z4@npaa1243:/home/ASV8Z4/clarity/* $VER/tmp/
+
+scp $VER/*.log asv8z4@npaa1243:/home/ASV8Z4/clarity/

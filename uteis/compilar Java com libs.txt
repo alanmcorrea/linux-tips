@@ -1,0 +1,1 @@
+javac -classpath lib/gson-1.7.1.jar HelloWorld.java 

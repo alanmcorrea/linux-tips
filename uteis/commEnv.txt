@@ -1,0 +1,5 @@
+${WL_HOME}/oracle_common/bin/commEnv.sh
+
+/ebusiness/shared/usr/oracle/appserver/DevInt468_WLSv103/wlserver/common/bin/commEnv.sh
+
+/ebusiness/shared/usr/oracle/appserver/HmlInt203_WLSv12c/oracle_common/common/bin/commBaseEnv.sh

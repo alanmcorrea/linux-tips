@@ -1,0 +1,12 @@
+tail -1000 /var/log/messages > /tmp/var-log-messages.txt
+dmesg > /tmp/dmesg.txt
+yum info open-vm-tools > /tmp/versao-open-vm-tools.txt
+cat /etc/fstab > /tmp/fstab.txt
+
+do npaa1243:
+
+h nomeservidor > versao-kernel-SO-BDGC-nomeservidor.txt
+
+scp /tmp/*.txt asv8z4@npaa1243:/home/ASV8Z4/versoes/npaa2847
+
+zip versoesNpaa2832-Npaa2847.zip -r versoes/*

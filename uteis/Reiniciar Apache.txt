@@ -1,0 +1,8 @@
+cd /bin (/ebusiness/shared/servers/webdav-services/)
+
+./checkHttpConfig.sh 
+
+cd ..(webdav-services)
+
+sudo ./restart_graceful
+sudo ./restart_status (Verificar se está td OK)

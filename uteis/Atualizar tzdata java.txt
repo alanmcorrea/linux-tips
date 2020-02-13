@@ -1,0 +1,17 @@
+Baizar o tzdataupdater:
+
+https://www.oracle.com/technetwork/java/javase/downloads/tzupdater-download-513681.html
+
+Baixar o pacote atual do tzdata:
+
+https://www.iana.org/time-zones
+OU
+ftp://ftp.iana.org/tz/releases/
+
+copiar para  servidor e executar o comando abaixo:
+
+java -jar tzupdater.jar -l file:c:\temp\tzdata2019c.tar.gz
+
+Para checar a versão e verificar se está correta executar o comando abaixo:
+
+java -jar tzupdater.jar -V

@@ -1,0 +1,117 @@
+----GIT-----------
+
+################ Configurar git ######################
+
+git config --global user.name "Alan M. Correa"
+
+git config --global user.email "alancorrea.ti@gmail.com"
+
+################ Inicializar git ######################
+
+git init
+
+################ log git ######################
+
+git log
+
+git log --decorate
+
+git log --author="alan"
+
+git shortlog
+
+git shortlog -sn
+
+git log --graph
+
+git show <hash>
+
+################ diff git ######################
+
+git diff
+
+git diff --name-only
+
+################ desfazer coisas ######################
+
+Apenas editou o arquivo e quer desfazer:
+
+    git checkout <file>
+
+Editou o arquivo e adicionou no staged:
+
+    git reset HEAD <file>
+    git checkout <file>
+
+Editou, adicionou e comitou:
+
+    git reset --soft --> Mata o comit e volta os arquivos para staged
+    
+    git reset --mixed --> Mata o comit e volta os arquivos para modified
+
+    git reset --hard --> Mata tudo que foi feito no commit
+
+    Passar sempre a hash de um commit antes do que vc quer voltar:
+
+        git commit --soft <hash>
+
+################ Conectar repositório remoto ######################
+
+https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+
+**** Generating a new SSH key *****
+
+Open Terminal.
+
+Paste the text below, substituting in your GitHub email address.
+
+    $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    This creates a new ssh key, using the provided email as a label.
+
+    Generating public/private rsa key pair.
+    When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+
+    Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
+    At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
+
+    Enter passphrase (empty for no passphrase): [Type a passphrase]
+    Enter same passphrase again: [Type passphrase again]
+
+**** Adicionando chave no github ***
+
+cat <caminho da chave> (~/.ssh/rsa_id.pub), copiar a chave
+
+Ir em Settings -> SSH and GPG keys, e adicionar a chave criada.
+
+*** LIgar repositório local ao remoto***
+
+git remote add origin <endereço do repositório>
+
+################ Enviar / baixar mudanças local para repositório remoto ######################
+
+git pull -u origin master
+
+git push -u origin master
+
+################ Clonar repositório remoto ######################
+
+git clone <endereço do repositório> <Nome do repositório após clonar>
+
+################ Fazendo fork repositório remoto ######################
+
+Clicar no botão "fork"
+
+Serve para fazer uma cópia de um repositório que não é meu para que eu possar trabalhar nele, com o colne vc trabalha em cima do mesmo repositório remoto e apenas copia para local.
+
+################ Desfazer commit com revert #####################
+
+git revert <hash>
+
+################ Criar branch #####################
+
+git branch <branch name>
+
+################ Fazer merge com branch #####################
+
+git merge <branch name>
+

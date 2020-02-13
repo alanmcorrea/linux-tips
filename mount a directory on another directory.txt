@@ -1,0 +1,12 @@
+Yes but before I go that far, couldn't you just symlink?
+
+ln -s /media/tc1/folder ~/home
+This link is just a file that is interpreted. It is automatically permanent (until you delete the file).
+
+Failing that you can use mount as you described but the syntax is slightly different:
+
+mount --bind /media/tc1/folder /home/dvad/home
+This is not permanent at all, and will be nuked by a restart. If you want it to persist, you'll need something in your /etc/fstab like this:
+
+/media/tc1/folder    /home/dvad/home    none    bind
+If you're trying a mount and it's not working, you should make sure that the block-level device is mounted. You can't directly mount a subdirectory of a partition without first mounting the partition.

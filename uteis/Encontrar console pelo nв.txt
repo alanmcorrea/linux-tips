@@ -1,0 +1,1 @@
+cat /ebusiness/shared/servers/DOMINIO/config/config.xml | grep machine

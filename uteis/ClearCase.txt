@@ -1,0 +1,17 @@
+####### Caminho base Clarity #######
+
+\\s6005as273\Sistemas4\TI_ADS\GDPT_manutencao
+
+\\s6005as273\Sistemas2\TI_DS\Z5MG_manutencao
+
+####### Caminho base #######
+
+\\s6005as273\Sistemas2\TI_DS
+\\s6005as273\Sistemas4\TI_ADS
+\\s6005as277\Sistemas\TRANSPETRO
+\\s6005as277\Sistemas\TI_ENG
+
+
+####### Caminho rede reg regions etc #######
+
+\\Petrobras.biz\Petrobras\TIC\TIC_ESTTIC_FGRC\NP-1\CTSW\GCS\Suporte\Diversos

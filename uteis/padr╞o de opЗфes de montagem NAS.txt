@@ -1,0 +1,1 @@
+rw,bg,vers=3,tcp,timeo=600,rsize=32768,retrans=2,wsize=32768,hard,nointr

@@ -1,0 +1,22 @@
+ssh pontus
+
+cd /ebusiness/shared/servers/webdav-services/conf/applications.d/
+
+cd (dev ou tst ou prd etc)-confs
+
+Procurar o CFG de acordo com o servidor
+(Ex.: DevInt468_WLSv103.cfg)
+
+Abrir o arquivo CFG e localizar nele os caminhos e grupos necessários para acesso
+
+Tag <Location> = Caminho
+Atributo 'Require group' = grupo necessário
+
+cd /ebusiness/shared/servers/webdav-services/conf/auth
+
+editar o arquivo 'group' inserindo a chave no grupo desejado
+
+grupo para acesso dev -> ti-dev01
+
+
+

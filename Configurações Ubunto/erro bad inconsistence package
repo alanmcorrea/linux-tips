@@ -1,0 +1,8 @@
+﻿1. Make sure that your PPA is set up.
+2. Remove the broken package via the following command:
+sudo dpkg --remove --force-remove-reinstreq zramswap-enabler
+3. Install the package again:
+sudo apt-get install zramswap-enabler
+4. After restart (not necessary), you are able to install the updates correctly!
+Actually you can fix any "Package is in a very bad inconsistent state” issues with this solution!
+

@@ -1,0 +1,9 @@
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+
+Passo 3. Atualize o APT com o comando:
+
+sudo apt-get update
+
+Passo 4. Agora instale o programa com o comando:
+
+sudo apt-get install qbittorrent

@@ -1,0 +1,5 @@
+Editar o arquivo '~/.bashrc' e inserir a entrada:
+
+	PS1='\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD\n\$ '
+
+Pois o padrão do bash é exibir apenas o current directory(w) e não o PATH(pwd).

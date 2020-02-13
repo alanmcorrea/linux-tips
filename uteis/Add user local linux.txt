@@ -1,0 +1,23 @@
+
+##### Na mão #####
+
+/etc/passwd 
+/etc/security/access.conf 
+/etc/sudoers.d/admunix 
+
+##### Comando #####
+
+useradd asv8z4 -d /home/asv8z4 -m -s /bin/bash asv8z4 -c "Alan Machado Correa"
+
+ou apenas useradd asv8z4
+
+# Ansible managed: /clarity/util/ansible/roles/comum/templates/admin.j2 on npaa4438.petrobras.biz
+
+%GG_SE_UNIX_APP_CLARITY_ADMINS ALL=(ALL) NOPASSWD:ALL
+Defaults:%GG_SE_UNIX_APP_CLARITY_ADMINS !requiretty
+
+%GG_INFRA_SUPORTE_AB ALL=(ALL) NOPASSWD:ALL
+Defaults:%GG_INFRA_SUPORTE_AB !requiretty
+
+%GG_INFRA_WEB_UNIX ALL=(ALL) NOPASSWD:ALL
+Defaults:%GG_INFRA_WEB_UNIX !requiretty

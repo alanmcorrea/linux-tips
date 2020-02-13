@@ -1,0 +1,3 @@
+comando: gconf-editor
+
+app->metacity->general->2click->layoutbutton->menu

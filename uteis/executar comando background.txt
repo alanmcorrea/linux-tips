@@ -1,0 +1,19 @@
+https://udgwebdev.com/dicas-de-terminal-processos-em-background/
+
+Execução simples
+
+O comando abaixo executa em background, porém sua saída será no terminal, fazendo com que misture informações de saída com seus comandos com as saídas de outras tarefas que você executar.
+
+ nohup [COMANDO] &
+
+Execução sem gerar saída
+
+Este comando faz com que toda saída de informação do processo seja enviado para o "buraco negro" do linux, o /dev/null, resumindo nenhuma impressão de saída aparecerá no terminal.
+
+ nohup [COMANDO] > /dev/null &
+
+Execução gerando saída em arquivo log
+
+Este comando permite salvar toda saída dos processos em background sejam enviados para um arquivo de texto, essa é a melhor forma de manter o terminal limpo sem perder as informações de saída, pois tudo estará em um arquivo de log.
+
+ nohup [COMANDO] > ./saida.log &

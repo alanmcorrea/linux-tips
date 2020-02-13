@@ -1,0 +1,24 @@
+service zabbix-agent status
+service zabbix-agent restart
+
+############ caso o restart não resolva ###########
+
+Agente ZABBIX
+
+Remover agente: yum erase zabbix-agent
+
+Baixar o registro: curl -O http://control.petrobras.biz/registro/registro.sh
+
+Registrar: bash registro.sh -a
+
+Mover o zabbix atual para um backup: mv /etc/zabbix /etc/zabbix-old
+
+Instalar o agente: curl http://cast-ws.petrobras.com.br/unix/scripts/aprovisionamento/zabbix_install.sh | bash
+
+
+Reiniciar o serrviço: service zabbix-agent restart
+Fechar a porta: iptables -A INPUT -p tcp -dport 10051 -j DROP
+
+Liberar a porta: iptables -A INPUT -p tcp -dport 10051 -j ACCEPT 
+
+Verificar Log: cat /var/log/zabbix/zabbix_agentd.log

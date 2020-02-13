@@ -1,0 +1,5 @@
+https://conecte.petrobras.com.br/wikis/home?lang=pt-br#!/wiki/SATSPW/page/Registro%20de%20sistemas%20RHEL%20e%20CentOS
+
+
+Baixar o registro: curl -O http://control.petrobras.biz/registro/registro.sh
+bash registro.sh -a

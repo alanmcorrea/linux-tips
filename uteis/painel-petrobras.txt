@@ -1,0 +1,11 @@
+s6006as2843
+
+Aplicação PHP que roda apenas no apache
+
+service httpd stop
+service httpd start
+
+vi /etc/httpd/conf/httpd.conf
+
+cd /var/www/
+

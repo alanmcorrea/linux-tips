@@ -1,0 +1,31 @@
+Adicionando suporte USB na Maquina virtual
+
+- alterem o FSTAB, para adicionar os devices USB, via terminal:
+
+gksudo gedit /etc/fstab
+
+- adicionem estas linhas no fim do arquivo:
+
+#usbfs
+none /proc/bus/usb usbfs devgid=46,devmode=664 0 0
+
+Salvem e reiniciem (boot) o sistema.
+
+Nas propriedades do VirtualBox adicionem as portas USB e USB 2.0, e pronto!
+
+----
+
+Consegui, é porque precisava usar o comando
+
+$ grep vboxusers /etc/group
+
+aí ele te retorna seu número do devguid para que você possa colocar utilizando esse outro comando aqui
+
+none /proc/bus/usb usbfs devgid=128,devmode=664 0 0
+
+no meu caso meu devguid foi 128 =]
+
+obrigado pela ajuda de todos, estou finalizando o tópico.
+
+
+NO MEU : vboxusers:x:124:

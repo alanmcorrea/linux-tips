@@ -1,0 +1,52 @@
+FAZER BLACKOUT
+
+ALM 241182
+
+compostela
+pasolini
+radamante
+radamante-c
+dedalion
+dedalion-c
+atselum
+atselum-c
+saneta
+saneta-c
+fortissio
+fortissio-c
+molvania
+vulgaria
+alepo
+
+SEDE: 
+
+URL: bdemqsede.ab.petrobras.biz
+
+CONSOLE: http://radamante:10500/console
+
+*-----------------------------------------*
+
+TERCEIROS:
+
+URL: bdemqterceiros.petrobras.com.br
+
+CONSOLE: Túnel para alepo porta 14300
+
+http://npaa1243:55556/console
+
+
+*-----------------------------------------*
+
+TERMINAIS:
+
+URL: bdemq338.transp.biz CONSOLE: http://compostela:7601/console - coari
+URL: bdemq353.transp.biz CONSOLE: http://pasolini:4401/console - tecam
+URL: bdemq328.transp.biz CONSOLE: http://pasolini:5601/console - temadre-DESATIVADO
+URL: bdemq373.transp.biz CONSOLE: http://pasolini:4601/console - tedut
+URL: bdemq386.transp.biz CONSOLE: http://pasolini:5401/console - tefran-DESATIVADO 
+
+*-----------------------------------------*
+
+PI
+
+Parar e subir o PI antes de subir as aplicações.

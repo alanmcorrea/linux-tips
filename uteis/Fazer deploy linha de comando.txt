@@ -1,0 +1,5 @@
+java -cp /ebusiness/shared/usr/oracle/appserver/PrdInt109_WLSv103/wlserver/server/lib/weblogic.jar weblogic.Deployer -adminurl http://caico.petrobras.com.br:10900 -username asv8z4 -password zNIMDA88 -deploy -name ExploraEAR_producao -targets MgdUshuaia10910 -source /ebusiness/shared/servers/PrdInt109_WLSv103/upload/ExploraEAR_producao.ear
+
+java -cp /ebusiness/shared/usr/oracle/appserver/PrdInt109_WLSv103/wlserver/server/lib/weblogic.jar weblogic.Deployer -adminurl http://caico.petrobras.com.br:10900 -username asv8z4 -deploy -name ExploraEAR_producao -targets MgdUshuaia10910 -source /ebusiness/shared/home/PrdInt109_WLSv103/application/explora/ExploraEAR_producao.ear
+
+t3://caico.petrobras.com.br:10900

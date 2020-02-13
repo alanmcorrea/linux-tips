@@ -1,0 +1,40 @@
+
+
+    Install the yum-utils package:
+    Raw
+
+    # yum install yum-utils
+
+    The package-cleanup --dupes lists all duplicate packages:
+    Raw
+
+    # package-cleanup --dupes        
+
+    The package-cleanup --cleandupes removes the duplicates (it asks for a confirmation to remove all duplicates unless the -y switch is given):
+    Raw
+
+    # package-cleanup --cleandupes   
+
+    Edit /etc/yum.conf, set the following line:
+    Raw
+
+    exactarch=1
+
+    Run yum command:
+    Raw
+
+    # yum clean all
+    # yum update
+
+If the conflict is only due to the fact that yum isn't trying to update the 32 bit packages along with the 64 bit ones, this will solve the conflict.
+
+Note: If all above procedure fail, you can also check your exclude content in /etc/yum.conf file. Sometimes 32Bits Packages are in the yum blacklist and system will prevent it to install and you will see the Transaction Check Error.
+Raw
+
+# grep -i exclude /etc/yum.conf
+exclude=kernel*,*.i?86
+
+Note 2: In case the systems cannot be connected to the internet for security reasons, one could replace the files with the rpm command as follow:
+Raw
+
+rpm -Uvh --replacefiles openssl-*.rpm

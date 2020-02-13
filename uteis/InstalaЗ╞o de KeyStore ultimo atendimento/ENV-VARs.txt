@@ -1,0 +1,5 @@
+JAVA_HOME="/ebusiness/shared/usr/oracle/appserver/TstInt303_WLSv12c/java"
+
+WL_HOME="/ebusiness/shared/usr/oracle/appserver/TstInt303_WLSv12c/wlserver"
+
+DOMAIN_HOME="/ebusiness/shared/servers/TstInt303_WLSv12c"

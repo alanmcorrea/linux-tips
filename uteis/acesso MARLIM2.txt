@@ -1,0 +1,10 @@
+usuário: svcmarlim 
+ssh svcmarlim@marlim.cenpes.petrobras.com.br 
+senha: marlim123
+
+
+1 - sudo su - svcmarlim
+2 - cd /producao/init
+3 - ./marlim -p ~/System.properties check  (checa o servico)
+4 - ./marlim -p ~/System.properties stop (parando o servico)  senha: marlim!@#
+5 - ./marlim -p ~/System.properties start (iniciando o servico) 

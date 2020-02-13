@@ -1,0 +1,24 @@
+ 2736  2019-07-05 11:40:59 service httpd restart
+ 2794  2019-07-05 15:45:48 service httpd restart
+ 2799  2019-07-08 11:20:08 service httpd start
+ 2807  2019-07-08 11:23:21 /usr/sbin/httpd -f /etc/httpd/conf/httpd8443.conf -k start
+ 2820  2019-07-08 11:28:47 /usr/sbin/httpd -f /etc/httpd/conf/httpd8443.conf -k start
+ 2822  2019-07-08 11:29:34 /usr/sbin/httpd -f /etc/httpd/conf/httpd443.conf -k start
+ 2823  2019-07-08 11:29:43 /usr/sbin/httpd -f /etc/httpd/conf/httpd8444.conf -k start
+ 2830  2019-07-08 11:32:39 service httpd start
+ 2833  2019-07-08 11:33:16 /usr/sbin/httpd -f /etc/httpd/conf/httpd8443.conf -k start
+ 2834  2019-07-08 11:33:21 /usr/sbin/httpd -f /etc/httpd/conf/httpd8444.conf -k start
+ 2835  2019-07-08 11:33:21 /usr/sbin/httpd -f /etc/httpd/conf/httpd443.conf -k start
+ 2839  2019-08-30 18:09:09 /usr/sbin/httpd -f /etc/httpd/conf/httpd8443.conf -k start
+ 2845  2019-08-30 18:22:32 /usr/sbin/httpd -f /etc/httpd/conf/httpd8443.conf -k start
+ 2846  2019-08-30 18:22:39 /usr/sbin/httpd -f /etc/httpd/conf/httpd8444.conf -k start
+ 2847  2019-08-30 18:22:45 /usr/sbin/httpd -f /etc/httpd/conf/httpd443.conf -k start
+ 2859  2019-09-02 12:39:45 /usr/sbin/httpd -f /etc/httpd/conf/httpd8443.conf -k start
+ 2861  2019-09-02 12:40:21 /usr/sbin/httpd -f /etc/httpd/conf/httpd8443.conf -k start
+ 2864  2019-09-02 12:41:02 /usr/sbin/httpd -f /etc/httpd/conf/httpd8444.conf -k start
+ 2865  2019-09-02 12:41:17 /usr/sbin/httpd -f /etc/httpd/conf/httpd443.conf -k start
+ 2885  2019-09-02 13:12:27 /usr/sbin/httpd -f /etc/httpd/conf/httpd443.conf -k start
+ 2892  2019-09-02 13:13:52 /usr/sbin/httpd -f /etc/httpd/conf/httpd8444.conf -k start
+ 2909  2019-09-02 13:29:23 /usr/sbin/httpd -f /etc/httpd/conf/httpd443.conf -k start
+ 2916  2019-09-02 13:30:47 /usr/sbin/httpd -f /etc/httpd/conf/httpd8444.conf -k start
+ 2977  2019-10-22 09:08:26 history | grep start

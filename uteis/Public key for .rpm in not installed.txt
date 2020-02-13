@@ -1,0 +1,38 @@
+--- yum error – Public key for *.rpm is not installed ---
+
+###### the dirty way aroung this is doing: ######
+
+$ yum install {package-name} --nogpgcheck
+
+###### But best practice is: ######
+
+first cd to:
+
+$ cd /etc/pki/rpm-gpg
+
+Then do a wget command, here's an example:
+
+$ wget -O http://yum.theforeman.org/releases/1.8/RPM-GPG-KEY-foreman
+
+then import it into rpm db like this:
+
+$ rpm --import RPM-GPG-KEY-foreman
+
+You can list all the imported keys like this:
+
+$ rpm -qa gpg*
+
+then to check it have worked, you can do:
+
+$ rpm -qi gpg-pubkey-225c9b71-54fda121
+ Name : gpg-pubkey Relocations: (not relocatable)
+ Version : 225c9b71 Vendor: (none)
+ Release : 54fda121 Build Date: Wed 28 Oct 2015 11:41:38 AM GMT
+ Install Date: Wed 28 Oct 2015 11:41:38 AM GMT Build Host: localhost
+ Group : Public Keys Source RPM: (none)
+ Size : 0 License: pubkey
+ Signature : (none)
+ Summary : gpg(Foreman Release Signing Key (1.8) <packages@theforeman.org>)
+ Description :
+ -----BEGIN PGP PUBLIC KEY BLOCK-----
+

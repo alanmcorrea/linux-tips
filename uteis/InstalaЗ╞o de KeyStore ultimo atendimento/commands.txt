@@ -1,0 +1,62 @@
+Petrobras Root - https://cawiki.ep.petrobras.com.br/foswiki_ep/pub/CA/PerguntasFrequentes/PetrobrasRoot.crt
+Petrobras AC - https://cawiki.ep.petrobras.com.br/foswiki_ep/pub/CA/PerguntasFrequentes/PetrobrasAC.crt
+CAV4 -  https://servicoca.petrobras.com.br/fwca/index.jsp
+ANP – https://www.anp.gov.br/engine_webservice_externo/servicos_iengine.asmx
+No caso da ANP, baixar separadamente cada certificado
+ANP HOMOLOGAÇÃO - https://engine-externo.hml.anp.gov.br/engine_service.svc?wsdl
+
+------Deletar------------------------------------------------------- ‹ALIAS_DO_CERTIFICADO_A_SER_REMOVIDO› -keystore ‹PATH_DO_KEYSTORE›
+-----------------------------------------------------------------------------------------------
+
+Listar certificados: keytool -list -keystore .keystore2 / keytool -list -v -keystore keystore.jks
+Remover certificados: keytool -delete -alias raiz -keystore .keystore2
+Ver conteúdo de certificado: keytool -printcert -v -file mydomain.crt
+Ver conteúdo de certificado na Keystore: keytool -list -v -keystore keystore.jks -alias mydomain
+Exportar um certificado: keytool -export -alias foo -file certfile.cer -keystore privateKey.store
+
+senha cacerts = changeit
+
+/ebusiness/shared/etc/keystores/default/generic-trust.jks
+
+/ebusiness/shared/usr/oracle/appserver/PrdInt159_WLSv103/java
+
+keytool -importcert -alias petrobrasrootcert -file PetrobrasRoot.crt -keystore generic-trust.jks -storepass generic-trust
+
+keytool -import -alias petrobrasrootcert -keystore /usr/lib/jvm/java-1.8.0-oracle-1.8.0.141-1jpp.1.el7_3.x86_64/jre/lib/security/cacerts -file PetrobrasRoot.crt
+
+keytool -importcert -alias petrobrasaccert -file PetrobrasAC.crt -keystore generic-trust.jks -storepass generic-trust
+
+keytool -import -alias petrobrasaccert -keystore /usr/lib/jvm/java-1.8.0-oracle-1.8.0.141-1jpp.1.el7_3.x86_64/jre/lib/security/cacerts -file PetrobrasAC.crt
+
+
+[npaa5883]
+npaa5883.start_admin_env_adicional=JAVA_OPTIONS="-Djavax.net.ssl.trustStore=/ebusiness/shared/etc/keystores/default/generic-trust.jks"
+
+------------- login seguro -----------
+
+keytool -importcert -alias petrobrasloginseguro -file loginseguro-appspetrobrascombr.crt -keystore generic-trust.jks -storepass generic-trust
+
+keytool -import -alias petrobrasloginseguro -keystore /usr/lib/jvm/java-1.8.0-oracle-1.8.0.141-1jpp.1.el7_3.x86_64/jre/lib/security/cacerts -file loginseguro-appspetrobrascombr.crt
+
+------------elastic search----------------
+
+
+keytool -importcert -alias elasticcert -file certificado-elasticsearch.cer -keystore generic-trust.jks -storepass generic-trust
+
+keytool -import -alias certificado-elasticsearch.cer -keystore  /ebusiness/shared/usr/oracle/appserver/DevInt403_WLSv12c/java/jre/lib/security/cacerts -file certificado-elasticsearch.cer -storepass generic-trust
+
+------------ANP----------------
+
+RP40 - RANP - Avicena
+
+/ebusiness/shared/usr/oracle/appserver/PrdInt159_WLSv103/java
+
+keytool -importcert -alias ANP -file anpgovbr.crt -keystore WebadminTrustKeystore.jks -storepass ????
+
+keytool -import -alias ANP -keystore  /ebusiness/shared/usr/oracle/appserver/PrdInt159_WLSv103/java/jre/lib/security/cacerts -file anpgovbr.crt
+
+
+--------------------DemoIdentity Default------------------------
+/ebusiness/shared/servers/PrdInt100_WLS_Producao/security/DemoIdentity.jks
+
+DemoIdentityKeyStorePassPhrase

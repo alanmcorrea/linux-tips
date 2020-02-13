@@ -1,0 +1,23 @@
+Passo 1. Abra um terminal;
+Passo 2. Primeiro você tem que importar a chave GPG com o seguinte comando:
+
+wget -q -O - https://www.bunkus.org/gpg-pub-moritzbunkus.txt | sudo apt-key add -
+Passo 3. Se você estiver usando o Ubuntu ou um derivado dele, adicione o repositório do aplicativo, usando o seguinte comando;
+
+sudo sh -c "echo  'deb http://www.bunkus.org/ubuntu/$(lsb_release -cs)/ ./ ' >> /etc/apt/sources.list
+Passo 3. Se você estiver usando o Debian ou um derivado dele, adicione o repositório do aplicativo, usando o seguinte comando;
+
+sudo sh -c "echo  'deb http://www.bunkus.org/debian/$(lsb_release -cs)/ ./ ' >> /etc/apt/sources.list
+Passo 4. Atualize o APT com o comando:
+
+sudo apt-get update
+Passo 5. Agora instale o programa com o comando:
+
+sudo apt-get install mkvtoolnix mkvtoolnix-gui
+Passo 6. Se for necessário, desinstale o programa, usando os comandos abaixo;
+
+
+ 
+sudo apt-get remove mkvtoolnix mkvtoolnix-gui
+sudo apt-get autoremove
+

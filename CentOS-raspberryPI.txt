@@ -1,0 +1,63 @@
+
+Overall guide: https://rharmonson.github.io/cos7instpi.html
+
+My guide below:
+
+#####  Time to resize your disk  ###################
+
+== CentOS 7 userland ==
+
+If you want to automatically resize your / partition, just type the following (as root user):
+/usr/bin/rootfs-expand
+
+#####  Change the hostname  ###################
+
+sudo vi /etc/sysconfig/network
+HOSTNAME=myserver.domain.com
+
+sudo vi /etc/hosts 
+
+hostnamectl set-hostname hostname.domain.com
+
+/etc/init.d/network restart
+
+#####  Add new user  ############################
+
+adduser alan
+
+passwd alan (change password)
+
+sudo usermod -aG wheel alan (add into the wheel group, that by default is allowed to have sudo grants)
+
+##### configure wireless #######################
+
+nmcli d (quick list ethernet card installed on your machine)
+
+nmtui (open Network manager)
+
+##### Time & Date #######################
+ 
+timedatectl list-timezones | grep -i paulo
+result: America/Sao_Paulo
+
+timedatectl set-timezone America/Sao_Paulo
+
+timedatectl
+
+##### yum #######################
+
+Check for yum update using yum update yum, then install preferred packages. For example, I install yum related packages and tmux:
+
+yum install yum-utils deltarpm tmux
+
+--
+
+Update the system. tmux is an alternative to screen. It allows reconnecting to a tmux session with ease when using SSH using tmux attach.
+
+tmux new -s update
+
+yum update -y && reboot
+
+
+
+

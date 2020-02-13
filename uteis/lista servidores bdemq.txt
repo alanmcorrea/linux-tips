@@ -1,0 +1,13 @@
+compostela
+pasolini
+alepo
+radamante
+radamante-c
+dedalion
+dedalion-c
+saneta
+saneta-c
+atselum
+atselum-c
+fortissio
+fortissio-c

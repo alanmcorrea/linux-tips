@@ -1,0 +1,2 @@
+java weblogic.Admin -url t3s://AdminHost:9002 -username weblogic 
+-password weblogic RESUME MedRecManagedServer

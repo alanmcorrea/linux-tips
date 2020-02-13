@@ -1,0 +1,3 @@
+O servidor SUMERIO apresenta alto consumo de memória e travamentos constantes, pois atualmente hospeda 26 aplicações e encontra-se muito sobrecarregado, foi verificado que este tem apenas 15GB de memória e 0% de espaço em disco para que seja aumentada a memória SWAP, dessa forma solicito o aumento de memória RAM para 20GB e 10GB de espaço em disco no Sistema Operacional, de forma que seja possível adequar a swap (Atualmente possui 4GB e para 15GB de RAM o ideal são 8GB de SWAP).
+
+Em anexo, uma lista de chamados sobre indisponibilidade deste servidor nos últimos 30 dias, sendo q o filtro realizado foi o nome do servidor e exitem chamados onde o nome do servidor não é mencionado e sim a aplicação.

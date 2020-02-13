@@ -1,0 +1,42 @@
+1. BACKUP NO LINUX COM RSYNC
+É uma das mais utilizadas ferramentas de backup para Linux. Com ele podemos criar rotinas de backup incrementais, para salvar os arquivos localmente ou em servidor remoto.
+
+Usando o Rsync, pode-se atualizar os dados de um diretório e seus subdiretórios, preservando links, proprietários, permissões e privilégios. Remotamente, ele pode se conectar a um computador por meio de rsh, ssh ou conexões diretas em um socket.
+
+Por padrão, é executado por linha de comando, embora existam diversas interfaces para ele disponíveis como Grsync. Entretanto, com uma interface não se tem tanta flexibilidade quanto pela linha de comando.
+
+INSTALAÇÃO
+O Rsync, geralmente, é incluído na maioria das distribuições Linux, mas caso seja necessário instalar, basta fazê-lo via linha de comando:
+
+sudo apt-get install rsync
+SINCRONIZAÇÃO DE ARQUIVOS
+Para que um diretório dir2 tenha todos os arquivos de outro diretório di1, basta executar o seguinte comando:
+
+rsync -r dir1/ dir2
+Onde:
+
+rsync: executa o comando do rsync para sincronização de arquivos;
+-r : indica que o comando será executado recursivamente;
+dir1/: diretório onde estão os arquivos em relação aos quais se pretende fazer o backup;
+dir2: diretório onde os arquivos serão salvos.
+Leia também ...   LAMP no Linux: Aprenda a Instalar e Crie um Servidor WEB em Seu VPS
+SINCRONIZAÇÃO EM SERVIDOR REMOTO
+Primeiramente, é necessário ter um servidor ssh instalado, tanto no servidor quanto no cliente. Em seguida, deve-se:
+
+no cliente: criar uma chave pública utilizando keygen;
+no servidor: criar um usuário para o cliente. Em seguida, salvar a chave criada no cliente, no diretório .ssh na /home do usuário relacionado ao cliente. Então, criar um diretório de destino onde o backup será salvo.
+Em seguida, executa-se o seguinte comando:
+
+rsync -a ~/dir1 usuario_cliente@host_remoto:diretório_de_destino
+SINCRONIZAÇÃO AUTOMÁTICA
+Para a sincronização automática, uma opção é utilizar o crontab. Pode-se configurar os horários em que se pretende realizar a sincronização dos arquivos, seja na máquina local, seja em um servidor remoto.
+
+Para isso, abra o arquivo crontab usando o seu editor de preferência:
+
+sudo vi /etc/crontab
+Inclua, então, na tabela de comandos, o horário em que pretende fazer o backup e o comando rsync para realizá-lo com os parâmetros desejados. Exemplo:
+
+00 12 * * * rsync -a /dir1/ /dir2/
+Nesse caso, todos os dias, ao meio-dia, será feita a sincronização do diretório dir1 com o dir2, mantendo assim um backup preciso dos dados.
+
+Veja esse conteúdo aqui bem completo sobre backup com rsync.

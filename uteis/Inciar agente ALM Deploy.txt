@@ -1,0 +1,1 @@
+[webadmin@npaa4178 ~]$  /ebusiness/local/usr/ibm/deploy/alm-ibm-ucdagent/bin/agent start

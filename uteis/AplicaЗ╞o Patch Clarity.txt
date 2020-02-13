@@ -1,0 +1,79 @@
+﻿================================================================
+npaa2449 e npaa2453 (apps)
+webadmin
+svc_clarity.sh stop
+
+npaa2431(bd)
+como root - só parar se tiver patch de SO
+/u01/app/grid/product/11.2.0.4/grid_infra_1/bin/crsctl stop has
+================================================================
+Nos servidores de app e banco
+como root
+yum update --nogpgcheck
+yum clean all
+
+Nos bancos, rodar  como root:
+chown -R grid /u01/app/grid/product/11.2.0.4/grid_infra_1
+
+Nos bancos executar como grid:
+relink all  (como usuário Grid)
+
+Como root
+reboot
+
+================================================================
+Existe nova versão do opatch para este ciclo
+Como oracle (depois como grid)
+cd /u01/app/oracle/product/11.2.0.4/db_1 (e também /u01/app/grid/product/11.2.0.4/grid_infra_1 )
+cp /clarity/inst/oracle/patches/2019-01-30/p6880880_112000_Linux-x86-64.zip .
+rm -rf OPatch
+unzip p6880880_112000_Linux-x86-64.zip
+rm p6880880_112000_Linux-x86-64.zip
+================================================================
+
+GI
+como root
+cp file.rsp /tmp/
+chmod a+r /tmp/file.rsp
+chmod a+w  /u01/app/grid/product/11.2.0.4/grid_infra_1/crs/install/tfa_setup.sh
+chmod -R 777 /u01/app/oracle/oraInventory
+/u01/app/grid/product/11.2.0.4/grid_infra_1/OPatch/opatch auto /clarity/inst/oracle/patches/2019-01-30/28980134/28813878 -ocmrf /tmp/file.rsp  (parte mais demorada)
+
+Java
+como root
+/u01/app/grid/product/11.2.0.4/grid_infra_1/bin/crsctl stop has
+
+como grid
+cd /clarity/inst/oracle/patches/2019-01-30/28980134/28790660
+opatch apply
+
+como root
+/u01/app/grid/product/11.2.0.4/grid_infra_1/bin/crsctl start has
+===================  (verificar pmon pra ter certeza )
+Database + Java
+
+como oracle
+srvctl stop database -d $ORACLE_SID   (pra parar a instância)
+
+cd /clarity/inst/oracle/patches/2019-01-30/28980134/28790660
+opatch apply
+
+
+cd $ORACLE_HOME/sqlpatch/28790660
+sqlplus / as sysdba
+SQL> startup upgrade
+SQL> @postinstall.sql
+SQL> shutdown
+SQL> startup
+SQL> QUIT
+
+cd $ORACLE_HOME/rdbms/admin
+sqlplus / as sysdba
+SQL> @catbundle.sql psu apply
+SQL> @utlrp.sql
+SQL> QUIT
+
+
+Subir as aplicações nos servers npaa2449 e npaa2453 (apps)
+como webadmin
+svc_clarity.sh start

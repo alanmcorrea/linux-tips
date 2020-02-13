@@ -1,0 +1,5 @@
+grep -iRl pitrprod.transpetro.com.br ./
+
+i - ignore case
+R - recursivo
+l - exibir apenas arquivos que correspondem

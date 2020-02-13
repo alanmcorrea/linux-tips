@@ -1,0 +1,11 @@
+OpenSSL will allow you to look at it if it is installed on your system.
+
+openssl x509 -in cerfile.cer -noout -text
+
+The format of the .CER file might require that you specify a different encoding format to be explicitly called out.
+
+openssl x509 -inform pem -in cerfile.cer -noout -text
+
+or
+
+openssl x509 -inform der -in cerfile.cer -noout -text

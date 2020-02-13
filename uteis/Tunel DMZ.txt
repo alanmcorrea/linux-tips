@@ -1,0 +1,4 @@
+labieno - Servico Weblogic - FWCA DMZ - 13110 indisponivel
+Tunel para labieno porta 130100
+usuário: system
+Senha: AVdgPq0B
